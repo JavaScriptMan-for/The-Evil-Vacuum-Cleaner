@@ -68,6 +68,7 @@ let pl = new GameObject(500, 500, 100,100);
 
 //Функция игры
 async function Game() {
+    document.querySelector('#info').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds}`
     ctx.fillStyle = "blue";
     ctx.font = "20px Jura blue inline";
    await ctx.fillText("Пылесосущая долина - уровень 1", 10,15);
@@ -169,7 +170,14 @@ async function Dead() {
 
     //Проверка, умер ли персонаж или нет. В ней присудствует погрешность
     function findDead() {
-
+        if(minets == 3) {
+            clearInterval(game)
+            clearInterval(timeEnd)
+            localStorage.setItem('minets', minets)
+            console.log("Победа!");
+            document.querySelector('#info').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds}`
+            document.querySelector("#winModal").showModal()
+        }
         if (pl.x < cl_1.x + cl_1.width &&
             pl.x + pl.width > cl_1.x &&
             pl.y < cl_1.y + cl_1.height &&
@@ -241,6 +249,15 @@ async function Dead() {
          document.querySelector('#closeModal').addEventListener('click', ()=>{
             document.querySelector('#pauseModal').close()
          })
+         document.querySelector("#reload__").addEventListener('click',()=>{
+            document.location.reload();
+         })
+         document.querySelector('#toMainMenu__').addEventListener('click', ()=>{
+            document.querySelector("#modal").close()
+            setTimeout(()=>{
+             document.location.href = "index.html"
+            },500)
+            })
     //Движение пылесосов
          /* Первый пылесос */
          function moveOne() {
