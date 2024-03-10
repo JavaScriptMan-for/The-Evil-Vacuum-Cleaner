@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Evil Vacuum Cleaner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./img/favicon.svg">
+</head>
+<body>
+    <img data-pause="Пауза" title="Пауза" id="pause" src="./img/pause.png" alt="pause">
+    <canvas id="canvas" width="1104" height="732">
+        
+    </canvas> <br>
+    
+    <dialog id="modal">
+        <h1>Вы проиграли!</h1>
+        <div class="buttons">
+            <button id="reload">Начать заново</button>
+            <button id="toMainMenu">В главное меню</button>
+        </div>
+    </dialog>
+    <dialog id="pauseModal">
+        <div class="content">
+            <var id="closeModal">x</var> <br>
+            <h1>Вы находитесь в меню паузы</h1> <br>
+            <span id="info">Время: 00:00 Жизней: 1</span> <br>
+            <div class="buttons">
+                <button id="reload_">Начать заново</button>
+                <button id="toMainMenu_">В главное меню</button>
+            </div>
+        </div>                                          
+    </dialog>
+    <p id="time">00:00</p>
+    <div class="admin">
+        <img class="rool" id="up" src="./img/rightAndLeft.png" alt="UP"> 
+        <img class="rool" id="down" src="./img/rightAndLeft.png" alt="DOWN">
+        <img class="rool" id="left" src="./img/rightAndLeft.png" alt="LEFT">
+        <img class="rool" id="right" src="./img/rightAndLeft.png" alt="RIGHT">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

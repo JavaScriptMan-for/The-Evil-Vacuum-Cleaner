@@ -1,0 +1,120 @@
+@font-face {
+    font-family: Jura;
+    src: url("./fonts/Jura-Bold.ttf");
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url("./img/underground.jpg");
+   background-size: cover;
+    background-repeat: no-repeat;
+}
+canvas {
+    border: 1px black solid;
+    pointer-events: none;
+}
+p {
+    font-family: Jura, sans-serif;
+    justify-self: center;
+    font-size: 40px;
+   margin-top: 830px;
+   position: absolute;
+   color: blue;
+   user-select: none;
+}
+dialog {
+    background-color: rgb(58, 56, 56);
+    border: rgb(70, 143, 143) 1px solid;
+    border-radius: 30px;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+var {
+    margin-left: 430px;
+    margin-top: -180px;
+    position: absolute;
+    color: red;
+    font-size: 30px;
+    font-family: Jura;
+    cursor: pointer;
+}
+#info {
+    font-family: Jura, sans-serif;
+    justify-self: center;
+    font-size: 40px;
+    color: blue;
+    user-select: none;
+}
+h1 {
+    color: rgb(35, 94, 94);
+    font-family: Jura, sans-serif;
+    font-size: 30px;
+}
+h3 {
+    margin-top: -800px;
+    margin-left: 0px;
+    margin-bottom: 40px;
+}
+button {
+    background-color: rgb(70, 143, 143);
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-right: 20px;
+    color: rgb(58, 56, 56);
+    font-family: Jura, sans-serif;
+    transition: 200ms;
+}
+button:hover {
+    transform: scale(1.03);
+    background-color: rgb(77, 133, 133);
+}
+.admin {
+    margin-top: 1200px;
+    display: flex;
+    font-display: flex;
+    position: absolute;
+}
+.rool {
+    width: 50px;
+    position: absolute;
+    margin-left: -50px;
+    user-select: none;
+}
+#up {
+    rotate: 90deg;
+    margin-top: -180px;
+    cursor: grab;
+}
+#down {
+    rotate: -90deg;
+    margin-top: -120px;
+    cursor: grab;
+}
+#left {
+    rotate: 0deg;
+    margin-left: -100px;
+    margin-top: -140px;
+    cursor: grab;
+}
+#right {
+    rotate: 180deg;
+    margin-left: 0px;
+    margin-top: -140px;
+    cursor: grab;
+}
+#pause {
+    width: 70px;
+    height: 60px;
+    position: absolute;
+    z-index: 3;
+    pointer-events: auto;
+    margin-top: -680px;
+    margin-left: 1200px;
+    cursor: pointer;
+}
