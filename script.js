@@ -68,7 +68,7 @@ let pl = new GameObject(500, 500, 100,100);
 
 //Функция игры
 async function Game() {
-    document.querySelector('#info').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds}`
+    document.querySelector('.info').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds}`
     ctx.fillStyle = "blue";
     ctx.font = "20px Jura blue inline";
    await ctx.fillText("Пылесосущая долина - уровень 1", 10,15);
@@ -108,6 +108,16 @@ let timeEnd = setInterval(()=>{
     }
     document.querySelector('#time').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds}`
 },1000)
+
+document.addEventListener('click', ()=>{
+    music.play();
+    setInterval(()=>{
+        music.play();
+    },21000)
+   setInterval(()=>{
+    tick.play()
+   },1000)
+})
 
 console.log("Игра началась! Спасибо за поддержку!");
 //Действие игры
@@ -407,7 +417,7 @@ async function Dead() {
 
     document.addEventListener('touchstart', handleTouchStart, false);
     document.addEventListener('touchmove', handleTouchMove, false);
-
+    
     let xDown = null;
     let yDown = null;
 
@@ -420,6 +430,8 @@ async function Dead() {
         const firstTouch = getTouches(evt)[0];
         xDown = firstTouch.clientX;
         yDown = firstTouch.clientY;
+
+        
     };
 
     function handleTouchMove(evt) {

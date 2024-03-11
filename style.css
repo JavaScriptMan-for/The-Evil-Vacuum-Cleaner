@@ -6,7 +6,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     background-image: url("./img/underground.jpg");
    background-size: cover;
     background-repeat: no-repeat;
@@ -14,6 +13,8 @@ body {
 canvas {
     border: 1px black solid;
     pointer-events: none;
+    width: 1000px;
+    height: 700px;
 }
 p {
     font-family: Jura, sans-serif;
@@ -117,4 +118,100 @@ button:hover {
     margin-top: -680px;
     margin-left: 1200px;
     cursor: pointer;
+}
+@media screen and (max-width: 968px) {
+    canvas {
+        width: 700px;
+        height: 500px;
+    }
+    .admin {
+        margin-top: 800px;
+        display: flex;
+        font-display: flex;
+        position: absolute;
+    }
+    .rool {
+        width: 50px;
+        position: absolute;
+        margin-left: -50px;
+        user-select: none;
+    }
+    #up {
+        rotate: 90deg;
+        margin-top: -180px;
+        cursor: grab;
+    }
+    #down {
+        rotate: -90deg;
+        margin-top: -120px;
+        cursor: grab;
+    }
+    #left {
+        rotate: 0deg;
+        margin-left: -100px;
+        margin-top: -140px;
+        cursor: grab;
+    }
+    #right {
+        rotate: 180deg;
+        margin-left: 0px;
+        margin-top: -140px;
+        cursor: grab;
+    }
+}
+@media  screen and (max-width: 682px) {
+    canvas {
+        width: 500px;
+        height: 300px;
+    }
+}
+@media screen and (max-width: 448px) {
+    canvas {
+        width: 90vw;
+        height: 40vh;
+    }
+}
+@media screen and (max-width: 327px) {
+    canvas {
+        width: 70vw;
+        height: 20vh;
+}
+button {
+    background-color: rgb(70, 143, 143);
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-right: 10px;
+    color: rgb(58, 56, 56);
+    font-family: Jura, sans-serif;
+    transition: 200ms;
+    width: 150px;
+    margin-bottom: 20px;
+}
+h1 {
+    font-size: 20px;
+}
+dialog {
+    width: 170px;
+}
+}
+@media screen and (max-width: 360px) and (max-height: 612px) {
+    h1 {
+        font-size: 17px;
+        white-space: none;
+    }
+    dialog {
+        margin-top: 100px;
+        width: 160px;
+    }
+    button {
+        background-color: rgb(70, 143, 143);
+        border: 2px solid black;
+        border-radius: 20px;
+        margin-right: 10px;
+        color: rgb(58, 56, 56);
+        font-family: Jura, sans-serif;
+        transition: 200ms;
+        width: 140px;
+        margin-bottom: 20px;
+    }
 }
