@@ -106,6 +106,7 @@ let timeEnd = setInterval(()=>{
     if(minets < 10) {
         ziroMin = "0"
     }
+    //j
     document.querySelector('#time').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds} / 03:00`
 },1000)
 
