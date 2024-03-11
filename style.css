@@ -25,6 +25,15 @@ p {
    color: blue;
    user-select: none;
 }
+span {
+    font-family: Jura, sans-serif;
+    justify-self: center;
+    font-size: 40px;
+   margin-top: 830px;
+   position: absolute;
+   color: blue;
+   user-select: none;
+}
 dialog {
     background-color: rgb(58, 56, 56);
     border: rgb(70, 143, 143) 1px solid;
@@ -110,6 +119,8 @@ button:hover {
     cursor: grab;
 }
 #pause {
+    margin-top: -900px !important; 
+    margin-left: 500px !important;
     width: 70px;
     height: 60px;
     position: absolute;
@@ -158,11 +169,27 @@ button:hover {
         margin-top: -140px;
         cursor: grab;
     }
+    #pause {
+        margin-top: -660px !important;
+        margin-left: 350px !important;
+        position: absolute;
+        width: 70px;
+    }
+    body {
+        overflow-x: auto;
+        overflow-y: auto;
+    }
 }
 @media  screen and (max-width: 682px) {
     canvas {
         width: 500px;
         height: 300px;
+    }
+    #pause {
+        margin-top: -540px !important;
+        margin-left: 250px !important;
+        position: absolute;
+        width: 70px;
     }
 }
 @media screen and (max-width: 448px) {
@@ -213,5 +240,10 @@ dialog {
         transition: 200ms;
         width: 140px;
         margin-bottom: 20px;
+    }
+    #pause {
+        margin-left: 150px !important;
+        position: absolute;
+        width: 50px;
     }
 }

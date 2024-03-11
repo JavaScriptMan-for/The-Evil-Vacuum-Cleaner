@@ -106,7 +106,7 @@ let timeEnd = setInterval(()=>{
     if(minets < 10) {
         ziroMin = "0"
     }
-    document.querySelector('#time').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds}`
+    document.querySelector('#time').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds} / 03:00`
 },1000)
 
 document.addEventListener('click', ()=>{
@@ -164,6 +164,7 @@ async function Dead() {
          clearInterval(timeEnd);
          localStorage.setItem("pastTime", document.querySelector('#time').innerHTML)
         music.pause();
+        tick.pause()
         if(scream_ == true) {
          scream_ = false
           scream.play();
@@ -179,15 +180,22 @@ async function Dead() {
 }
 
     //Проверка, умер ли персонаж или нет. В ней присудствует погрешность
-    function findDead() {
+    function findWin() {
         if(minets == 3) {
+            Dead = ()=>{};
+            clearInterval(_one_)
+            clearInterval(_two_)
+            clearInterval(_three_)
             clearInterval(game)
+            tick.pause();
+            document.querySelector('.info').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds}`
             clearInterval(timeEnd)
             localStorage.setItem('minets', minets)
             console.log("Победа!");
-            document.querySelector('#info').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds}`
             document.querySelector("#winModal").showModal()
         }
+    }
+    function findDead() {
         if (pl.x < cl_1.x + cl_1.width &&
             pl.x + pl.width > cl_1.x &&
             pl.y < cl_1.y + cl_1.height &&
@@ -222,7 +230,8 @@ async function Dead() {
     
     
     let find = setInterval(()=>{
-       findDead()
+       findDead();
+       findWin()
     },10)
 
    document.querySelector('#reload').addEventListener('click', ()=>{
@@ -301,7 +310,7 @@ async function Dead() {
 
          moveOne();
 
-        setInterval(()=>{
+      let _one_ =  setInterval(()=>{
             moveOne()
         },20_000)
         function moveTwo() {
@@ -346,7 +355,7 @@ async function Dead() {
         }
         
         moveTwo()
-        setInterval(moveTwo, 15500);
+        let _two_ = setInterval(moveTwo, 15500);
 
         function moveThree() {
         var one =    setInterval(()=>{
@@ -412,7 +421,7 @@ async function Dead() {
             },2000)
         }
         moveThree()
-        setInterval(moveThree,52500)
+      let _three_ =  setInterval(moveThree,52500)
     //Свайпы
 
     document.addEventListener('touchstart', handleTouchStart, false);
