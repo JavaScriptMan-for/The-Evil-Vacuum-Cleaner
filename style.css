@@ -222,6 +222,12 @@ dialog {
     width: 170px;
 }
 }
+#closeModal {
+    margin-left: 150px !important;
+}
+#pause {
+    margin-top: -500px !important; 
+}
 @media screen and (max-width: 360px) and (max-height: 612px) {
     h1 {
         font-size: 17px;
@@ -248,3 +254,63 @@ dialog {
         width: 50px;
     }
 }
+@media screen and (max-width: 200px) {
+    body {
+        overflow: scroll;
+    }
+    canvas {
+        margin-left: 200px;
+        width: 200vw;
+        height: 40vh;
+    }
+    p {
+        white-space: nowrap;
+    }
+}
+@media screen and (max-width:150px) {
+    canvas {
+        margin-left: 150px;
+        width: 200vw;
+        height: 40vh;
+    }
+    p {
+        margin-left: 100px;
+        font-size: 30px;
+    }
+    .admin {
+        margin-left: 100px;
+    }
+}
+/* @media screen and (min-width: 4000px) {
+    canvas {
+        width: 2000px;
+        height: 1700px;
+    }
+    .admin {
+        margin-top: 1300px;
+        margin-left: -3000px;
+    }
+    .rool {
+        width: 300px;
+    }
+    #left {
+        margin-left: -400px;
+    }
+    #up {
+        margin-top: -400px;
+    }
+    #down {
+        margin-top: 50px;
+    }
+    #right {
+        margin-left: 300px;
+    }
+    #pause {
+        margin-top: -1500px !important;
+        margin-left: 2400px !important;
+    }
+    p {
+        font-size: 50px;
+        margin-top: 2000px;
+    }
+} */
