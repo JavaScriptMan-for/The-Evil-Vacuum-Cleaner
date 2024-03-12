@@ -12,3 +12,4 @@ document.querySelector('button').addEventListener('click',()=>{
         document.location.href = "level_3.html"
      }
 })
+
