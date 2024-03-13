@@ -5,31 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главное меню</title>
     <link rel="icon" href="./img/favicon.svg">
-    <style>
-        body {
-            display: grid;
-            justify-content: center;
-            align-content: center;
-            background-image: url("./img/images.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-        select {
-            width: 400px;
-            text-align: center;
-            font-family: serif;
-            font-size: 30px;
-        }
-    </style>
+    <link rel="stylesheet" href="main_style.css">
+   
 </head>
 <body>
-  <select name="" id="sel">
-    <option value="one">Первый уровень</option>
-    <option value="two">Второй уровень</option>
-    <option value="three">Третьий уровень</option>
-    <option value="four">Четвёртый уровень</option>
-  </select>
-  <button type="button">Играть</button>
-  <script src="index.js"></script>
+      <div class="game">
+   <img id="back" src="./img/rightAndLeft.png" alt="BACK"><span id="l" class="level">Превый уровень</span><img src="./img/rightAndLeft.png" alt="UP" id="up"> 
+      </div>
+      <div class="pr">
+        <div class="levelAndPlay">
+          <img id="levelPrew" src="./img/prew_1.jpg" alt="LEVELPRIVEW">
+        </div>
+      </div>
+      <img src="./img/play.png" id="play" alt="PLAY">
+      <script src="index.js"></script>
 </body>
 </html>

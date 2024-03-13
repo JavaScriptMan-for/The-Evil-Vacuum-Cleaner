@@ -1,0 +1,189 @@
+@font-face {
+    font-family: Jura;
+    src: url("./fonts/Jura-Bold.ttf");
+  }
+    body {
+        background-image: url("./img/images.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .game {
+      display: flex;
+      align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 30vh;
+       pointer-events: none;
+    }
+    img {
+      margin-left: 40px;
+      margin-right: 40px;
+      width: 150px;
+      height: 150px;
+      transition: 200ms;
+      pointer-events: auto;
+    }
+    #up {
+      transform: rotate(180deg);
+    }
+    span {
+      font-size: 40px;
+      color: blue;
+      font-family: Jura, sans-serif;
+      font-weight: 500;
+      border-bottom: 5px dashed rgb(91, 150, 150);
+    }
+    img:hover {
+      scale: 1.03;
+    }
+    #levelPrew {
+      border-radius: 50px;
+      border: white solid 2px;
+      width: 700px;
+      height: 500px;
+      filter: blur(5px) contrast(1.1);      
+      user-select: none;
+      pointer-events: none;
+      z-index: -7;
+      }
+    .pr {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 300vh;
+      position: relative;
+      z-index: -1;
+      pointer-events: none !important;
+      user-select: none;
+    }
+    a{
+      position: absolute;
+      align-self: 350px;
+      z-index: 4;
+      pointer-events: auto;
+      cursor: pointer;
+    }
+  
+    .levelAndPlay {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      height: fit-content;
+      pointer-events: none;
+    }
+    #play {
+        position: absolute;
+        margin-top: -290vh;
+        margin-left: 50vw;
+    }
+    @media screen and (max-width: 375px) {
+        img {
+            margin-left: 40px;
+            margin-right: 40px;
+            width: 50px;
+            height: 50px;
+            transition: 200ms;
+            pointer-events: auto;
+          }
+          #back {
+            margin-left: 30px;
+          }
+          #levelPrew {
+            width: 90vw;
+            height: 50vh;
+
+          }
+          #l {
+            font-size: 20px;
+          }
+          #play {
+            margin-left: 45vw;
+            margin-top: -280vh;
+          }
+    }
+    @media screen and (max-width: 414px) {
+        img {
+            margin-left: 40px;
+            margin-right: 40px;
+            width: 50px;
+            height: 50px;
+            transition: 200ms;
+            pointer-events: auto;
+          }
+          #back {
+            margin-left: 30px;
+          }
+          #levelPrew {
+            width: 90vw;
+            height: 40vh;
+
+          }
+          #l {
+            font-size: 20px;
+          }
+          #play {
+            margin-left: 45vw;
+            margin-top: -285vh;
+          }
+    }
+    @media screen and (max-width: 430px) {
+        img {
+            margin-left: 40px;
+            margin-right: 40px;
+            width: 50px;
+            height: 50px;
+            transition: 200ms;
+            pointer-events: auto;
+          }
+          #back {
+            margin-left: 30px;
+          }
+          #levelPrew {
+            width: 90vw;
+            height: 40vh;
+
+          }
+          #l {
+            font-size: 20px;
+          }
+          #play {
+            margin-left: 45vw;
+            margin-top: -285vh;
+          }
+    }
+@media screen and (max-width:540px) {
+    img {
+        margin-left: 40px;
+        margin-right: 40px;
+        width: 50px;
+        height: 50px;
+        transition: 200ms;
+        pointer-events: auto;
+      }
+      #back {
+        margin-left: 30px;
+      }
+      #levelPrew {
+        width: 90vw;
+        height: 40vh;
+
+      }
+      #l {
+        font-size: 20px;
+      }
+      #play {
+        margin-left: 45vw;
+        margin-top: -285vh;
+      }
+}
+@media screen and (max-width: 268px) {
+    img {
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 50px;
+        height: 50px;
+        transition: 200ms;
+        pointer-events: auto;
+      }
+}
