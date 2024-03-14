@@ -2,14 +2,18 @@
   "name": "vacum-game",
   "version": "1.0.3",
   "description": "Игра про Даню и пылесосы",
-  "main": "script.js",
+  "main": "server.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node index.js",
+    "start": "electron . --no-sandbox"
   },
   "repository": {
     "type": "git",
     "url": "The-Evil-Vacuum-Cleaner"
   },
   "author": "Minevsky Ivan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^29.1.2"
+  }
 }
