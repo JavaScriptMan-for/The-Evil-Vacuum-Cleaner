@@ -189,7 +189,7 @@ document.querySelector('#reload_').addEventListener('click', ()=>{
         })
         
 //Логика
-let timeAgr = 3000;
+let timeAgr = 5000;
 
 setInterval(()=>{
     if(crocX == 0 && crocY == 0) {
@@ -210,51 +210,60 @@ setInterval(()=>{
     if(agrEl == 0) {
         cr_2.sr,cr_3.sr,cr_4.sr,cr.sr = crocodile
         document.querySelector('#cr').innerHTML = "Никакой";
-        timeAgr -= 300
+        timeAgr -= 200
     }
     if(agrEl == 1) {
         cr_2.sr,cr_3.sr,cr_4.sr = crocodile
         cr.sr = evilCrocodile;
         document.querySelector('#cr').innerHTML = "Первый крокодил";
-        timeAgr -= 300
+        timeAgr -= 200
         setTimeout(()=>{
+         let a =  setInterval(()=>{
             if(onCroc == 1) {
                 Dead()
             }
-        },timeAgr)
+           },10) 
+        },2000)
     }
     if(agrEl == 2) {
         cr.sr,cr_3.sr,cr_4.sr = crocodile
         cr_2.sr = evilCrocodile;
         document.querySelector('#cr').innerHTML = "Второй крокодил";
-        timeAgr -= 300
+        timeAgr -= 200
         setTimeout(()=>{
-            if(onCroc == 2) {
-                Dead()
-            }
-        },timeAgr)
+            let b = setInterval(()=>{
+                if(onCroc == 2) {
+                    Dead()
+                }
+            },10)
+     
+        },2000)
     }
     if(agrEl == 3) {
         cr.sr,cr_2.sr,cr_4.sr = crocodile
         cr_3.sr = evilCrocodile;
         document.querySelector('#cr').innerHTML = "Третий крокодил";
-        timeAgr -= 300
+        timeAgr -= 200
         setTimeout(()=>{
-            if(onCroc == 3) {
-                Dead()
-            }
-        },timeAgr)
+            let c = setInterval(()=>{
+                if(onCroc == 3) {
+                    Dead()
+                }
+            },10)  
+        },2000)
     } 
     if(agrEl == 4) {
         cr.sr,cr_2.sr,cr_3.sr = crocodile
         cr_4.sr = evilCrocodile;
         document.querySelector('#cr').innerHTML = "Четвёртый крокодил";
-        timeAgr -= 300
+        timeAgr -= 200
         setTimeout(()=>{
-            if(onCroc == 4) {
-                Dead()
-            }
-        },timeAgr)
+            let d = setInterval(()=>{
+                if(onCroc == 4) {
+                    Dead()
+                }
+            },10)
+        },2000)
     } 
     if(minets > localStorage.getItem('yesdTimeMin') && seconds > localStorage.getItem('yesdTimeSec') && localStorage.getItem('bestMin')) {
         localStorage.setItem("bestMin", minets)
@@ -268,7 +277,11 @@ setInterval(()=>{
         localStorage.setItem('bestMin', minets);
         localStorage.setItem("bestSec", seconds)
     }
-},5000)
+    clearInterval(a);
+    clearInterval(b)
+    clearInterval(c)
+    clearInterval(d)
+},timeAgr)
 function Win() {
     localStorage.setItem('winned', true)
     Dead = ()=>{}
