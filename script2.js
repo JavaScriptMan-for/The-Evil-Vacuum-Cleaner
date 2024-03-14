@@ -190,6 +190,7 @@ document.querySelector('#reload_').addEventListener('click', ()=>{
         
 //Логика
 let timeAgr = 5000;
+let a,b,c,d
 
 setInterval(()=>{
     if(crocX == 0 && crocY == 0) {
@@ -218,7 +219,7 @@ setInterval(()=>{
         document.querySelector('#cr').innerHTML = "Первый крокодил";
         timeAgr -= 200
         setTimeout(()=>{
-         let a =  setInterval(()=>{
+       a =  setInterval(()=>{
             if(onCroc == 1) {
                 Dead()
             }
@@ -231,7 +232,7 @@ setInterval(()=>{
         document.querySelector('#cr').innerHTML = "Второй крокодил";
         timeAgr -= 200
         setTimeout(()=>{
-            let b = setInterval(()=>{
+             b = setInterval(()=>{
                 if(onCroc == 2) {
                     Dead()
                 }
@@ -245,7 +246,7 @@ setInterval(()=>{
         document.querySelector('#cr').innerHTML = "Третий крокодил";
         timeAgr -= 200
         setTimeout(()=>{
-            let c = setInterval(()=>{
+             c = setInterval(()=>{
                 if(onCroc == 3) {
                     Dead()
                 }
@@ -258,7 +259,7 @@ setInterval(()=>{
         document.querySelector('#cr').innerHTML = "Четвёртый крокодил";
         timeAgr -= 200
         setTimeout(()=>{
-            let d = setInterval(()=>{
+            d = setInterval(()=>{
                 if(onCroc == 4) {
                     Dead()
                 }
