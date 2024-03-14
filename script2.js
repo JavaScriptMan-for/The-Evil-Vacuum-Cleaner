@@ -124,8 +124,9 @@ function Dead() {
     }
     delete Dead;
     clearInterval(timeEnd)
-    clearInterval(game)
-    //localStorage.setItem()
+    clearInterval(game);
+    localStorage.setItem("yesdTimeMin", minets);
+    localStorage.setItem("yesdTimeSec", seconds);
     document.querySelector('#deadModal').showModal();
     Dead = ()=>{}
 }
@@ -188,7 +189,7 @@ document.querySelector('#reload_').addEventListener('click', ()=>{
         })
         
 //Логика
-let timeAgr = 5000;
+let timeAgr = 3000;
 
 setInterval(()=>{
     if(crocX == 0 && crocY == 0) {
@@ -209,13 +210,13 @@ setInterval(()=>{
     if(agrEl == 0) {
         cr_2.sr,cr_3.sr,cr_4.sr,cr.sr = crocodile
         document.querySelector('#cr').innerHTML = "Никакой";
-        timeAgr += 300
+        timeAgr -= 300
     }
     if(agrEl == 1) {
         cr_2.sr,cr_3.sr,cr_4.sr = crocodile
         cr.sr = evilCrocodile;
         document.querySelector('#cr').innerHTML = "Первый крокодил";
-        timeAgr += 300
+        timeAgr -= 300
         setTimeout(()=>{
             if(onCroc == 1) {
                 Dead()
@@ -226,7 +227,7 @@ setInterval(()=>{
         cr.sr,cr_3.sr,cr_4.sr = crocodile
         cr_2.sr = evilCrocodile;
         document.querySelector('#cr').innerHTML = "Второй крокодил";
-        timeAgr += 300
+        timeAgr -= 300
         setTimeout(()=>{
             if(onCroc == 2) {
                 Dead()
@@ -237,7 +238,7 @@ setInterval(()=>{
         cr.sr,cr_2.sr,cr_4.sr = crocodile
         cr_3.sr = evilCrocodile;
         document.querySelector('#cr').innerHTML = "Третий крокодил";
-        timeAgr += 300
+        timeAgr -= 300
         setTimeout(()=>{
             if(onCroc == 3) {
                 Dead()
@@ -255,8 +256,21 @@ setInterval(()=>{
             }
         },timeAgr)
     } 
-},7000)
+    if(minets > localStorage.getItem('yesdTimeMin') && seconds > localStorage.getItem('yesdTimeSec') && localStorage.getItem('bestMin')) {
+        localStorage.setItem("bestMin", minets)
+        localStorage.setItem("bestSec", seconds)
+    } 
+    if(minets > localStorage.getItem('bestMin')) {
+        localStorage.setItem('bestMin', minets);
+        localStorage.setItem("bestSec", seconds)
+    }
+    if(minets === localStorage.getItem('bestMin') && seconds > localStorage.getItem('bestSec')) {
+        localStorage.setItem('bestMin', minets);
+        localStorage.setItem("bestSec", seconds)
+    }
+},5000)
 function Win() {
+    localStorage.setItem('winned', true)
     Dead = ()=>{}
     clearInterval(game);
     delete Game;
@@ -291,6 +305,12 @@ function handleTouchStart(evt) {
 };
 let swipe = 'never';
 function handleTouchMove(evt) {
+    jump.play()
+    if(isPlay) {
+        setInterval(()=>{
+            music.play()
+        },21000)
+    }
     if ( ! xDown || ! yDown ) {
         return;
     }
