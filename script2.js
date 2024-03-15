@@ -13,7 +13,7 @@ let ziroSec = "0";
 let ziroMin = "0"
 let isTick = false;
 let onCroc = 1;
-let isPlay = true
+let isPlay = false
 
 let arrAgr = [0,1,2,3,4]
 
@@ -68,15 +68,32 @@ async function Game() {
     await ctx.drawImage(cr_4.sr,cr_4.x, cr_4.y, cr_4.width, cr_4.height);
     await ctx.drawImage(pl.sr,crArrX[crocX], crArrY[crocY], pl.width, pl.height);
 }
-let game = setInterval(()=>{
-    Game();
-    document.querySelector('#time').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds} / 04:00`;
-    if(minets >= 4) {
-        Win()
-    }
-},10);
+let game;
+  requestIdleCallback(()=>{
+    game = setInterval(()=>{
+        Game();
+        document.querySelector('#time').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds} / 04:00`;
+        if(minets >= 4) {
+            Win()
+        }
+    },10)
 
+});
+
+
+document.addEventListener('click',()=>{
+    isTick = true
+    isPlay = true
+    if(isPlay) {
+        music.play();
+        setInterval(()=>{
+            music.play()
+        },21000)
+    }
+   
+})
 function onKey(e) {
+    isPlay = true
     jump.play()
     isTick = true;
     if(isPlay) {
@@ -114,7 +131,9 @@ function onKey(e) {
 
 document.addEventListener('keydown', onKey);
 function Dead() {
-   
+   jump.volume = 0;
+   music.volume = 0;
+   tick.volume = 0;
     isPlay = false
     if(!isScream) {
         scream.play();
@@ -122,12 +141,12 @@ function Dead() {
     if(!isPlay) {
         music.pause()
     }
-    delete Dead;
-    clearInterval(timeEnd)
+    clearInterval(timeEnd);
     clearInterval(game);
     localStorage.setItem("yesdTimeMin", minets);
     localStorage.setItem("yesdTimeSec", seconds);
     document.querySelector('#deadModal').showModal();
+    delete Dead;
     Dead = ()=>{}
 }
 let timeEnd = setInterval(()=>{
@@ -224,7 +243,7 @@ setInterval(()=>{
                 Dead()
             }
            },10) 
-        },2000)
+        },1000)
     }
     if(agrEl == 2) {
         cr.sr,cr_3.sr,cr_4.sr = crocodile
@@ -238,7 +257,7 @@ setInterval(()=>{
                 }
             },10)
      
-        },2000)
+        },1000)
     }
     if(agrEl == 3) {
         cr.sr,cr_2.sr,cr_4.sr = crocodile
@@ -251,7 +270,7 @@ setInterval(()=>{
                     Dead()
                 }
             },10)  
-        },2000)
+        },1000)
     } 
     if(agrEl == 4) {
         cr.sr,cr_2.sr,cr_3.sr = crocodile
@@ -264,7 +283,7 @@ setInterval(()=>{
                     Dead()
                 }
             },10)
-        },2000)
+        },1000)
     } 
     if(minets > localStorage.getItem('yesdTimeMin') && seconds > localStorage.getItem('yesdTimeSec') && localStorage.getItem('bestMin')) {
         localStorage.setItem("bestMin", minets)
@@ -319,6 +338,7 @@ function handleTouchStart(evt) {
 };
 let swipe = 'never';
 function handleTouchMove(evt) {
+    isPlay = true
     jump.play()
     if(isPlay) {
         setInterval(()=>{

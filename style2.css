@@ -119,6 +119,7 @@ p {
 #deadModal {
   justify-self: center;
 }
+
 @media screen and (max-width: 1022px) {
     canvas {
         width: 800px;
