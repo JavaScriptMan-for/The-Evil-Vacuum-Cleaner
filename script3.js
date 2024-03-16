@@ -186,22 +186,22 @@ function onKey(e) {
     document.addEventListener('keydown', onKey)
 
 function Dead() {
-    // document.querySelector('canvas').style.backgroundImage = "url('./img/ground_dead.gif')";
-    // scream.play();
-    // music.pause()
-    // music.volume = 0;
-    // tick.volume = 0;
-    //  clearInterval(timeEnd);
-    //  clearInterval(game);
-    //  localStorage.setItem("yesdTimeMin", minets);
-    //  localStorage.setItem("yesdTimeSec", seconds);
-    //  document.querySelector('#deadModal').showModal();
-    //  delete Dead;
-    //  Dead = ()=>{}
-    //  setInterval(()=>{
-    //     barr_1.y = Y
-    //      barr_2.y = Y
-    //  },1)
+    document.querySelector('canvas').style.backgroundImage = "url('./img/ground_dead.gif')";
+    scream.play();
+    music.pause()
+    music.volume = 0;
+    tick.volume = 0;
+     clearInterval(timeEnd);
+     clearInterval(game);
+     localStorage.setItem("yesdTimeMin", minets);
+     localStorage.setItem("yesdTimeSec", seconds);
+     document.querySelector('#deadModal').showModal();
+     delete Dead;
+     Dead = ()=>{}
+     setInterval(()=>{
+        barr_1.y = Y
+         barr_2.y = Y
+     },1)
 }
 
 function Win () {
