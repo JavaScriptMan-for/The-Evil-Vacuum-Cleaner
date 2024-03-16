@@ -270,6 +270,6 @@ document.querySelector('#reload_').addEventListener('click', ()=>{
         document.querySelector('#closeModal').addEventListener('click',()=>{
             document.querySelector('#pauseModal').close()
         })
-
+//1
 }
 
