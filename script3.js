@@ -202,7 +202,6 @@ function Dead() {
         barr_1.y = Y
          barr_2.y = Y
      },1)
-     //1
 }
 
 function Win () {
