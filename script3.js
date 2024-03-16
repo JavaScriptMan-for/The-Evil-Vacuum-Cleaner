@@ -98,7 +98,7 @@ function ALL() {
                 barr_1.y = Y;
                 barr_2.y = Y;
                 isAsert += 1
-                anim += 0.001
+                anim += 0.009
                 if(isAsert % 2) {
                     barr_1.x = cords[Math.floor(Math.random()*cords.length)]
                     barr_2.x = cords2[Math.floor(Math.random()*cords2.length)]
