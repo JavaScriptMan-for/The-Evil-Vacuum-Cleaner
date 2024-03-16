@@ -42,7 +42,7 @@
       }
       if(level == 3) {
          document.querySelector('#l').innerHTML = "Третий уровень";
-         document.querySelector('#levelPrew').src = "./img/uncown.jpg"
+         document.querySelector('#levelPrew').src = "./img/prew_3.jpg"
       }
       if(level == 4) {
          document.querySelector('#l').innerHTML = "Четвёртый уровень";

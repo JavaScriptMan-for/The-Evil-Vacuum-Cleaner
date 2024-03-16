@@ -2,10 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Evil Vacuum Cleaner</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon">
 </head>
 <body>
-    NOT A LEVEL
+    <div class="cnvc">
+       
+        <canvas id="cnvs">
+
+        </canvas>
+        <video autoplay="" id="screamer">
+            <source src="./video/penivize.mp4">
+        </video>
+        <p id="time">00:00</p> <br>
+        <img id="pause" src="./img/pause.png" alt="PAUSE">
+
+    </div>
+    <img id="play" onclick="ALL()" src="./img/play.png" alt="play">
+    <div class="dialogs">
+        <dialog id="deadModal">
+            <h1>Вы проиграли!</h1>
+            <div class="buttons">
+                <button id="reload">Начать заново</button>
+                <button id="toMainMenu">В главное меню</button>
+            </div>
+        </dialog>
+        <dialog id="winModal">
+            <h1>Вы победили!</h1>
+            <div class="buttons">
+                <button id="reload_">Начать заново</button>
+                <button id="toMainMenu_">В главное меню</button>
+            </div>
+        </dialog>
+        <dialog id="pauseModal">
+            <h1>Вы находитесь в меню паузы!</h1>
+            <div class="buttons">
+                <button id="reload__">Начать заново</button>
+                <button id="toMainMenu__">В главное меню</button>
+                <button id="closeModal">Закрыть</button>
+            </div>
+          </dialog>
+    </div>
+ <script src="script3.js"></script>
 </body>
 </html>

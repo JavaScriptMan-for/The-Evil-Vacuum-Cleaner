@@ -1,3 +1,7 @@
+@font-face {
+    font-family: Jura;
+    src: url("./fonts/Jura-Bold.ttf")
+}
 body {
     overflow: hidden;
     overflow-y: hidden;
