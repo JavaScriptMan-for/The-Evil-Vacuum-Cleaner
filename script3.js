@@ -1,4 +1,5 @@
 document.querySelector('.cnvc').style.cssText = `display: none`;
+document.querySelector('canvas').style.cssText = `backround: none`
 
 function ALL() {
     document.querySelector('#play').style.cssText = `display: none` 
@@ -171,8 +172,8 @@ function handleTouchMove(evt) {
    setTimeout(()=>{
         screamVideo.src = "./video/penivize.mp4";
       screamer.play();
-
-        setTimeout(StartGame, 2000)
+      document.querySelector('canvas').style.cssText = `backround-image: url('./img/ground.gif')`
+    setTimeout(StartGame, 2000)
      },randSc)
 function onKey(e) {
     if(e.keyCode == 65) {

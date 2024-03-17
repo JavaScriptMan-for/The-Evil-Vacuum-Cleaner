@@ -1,6 +1,6 @@
 {
   "name": "vacum-game",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Игра про Даню и пылесосы",
   "main": "server.js",
   "scripts": {

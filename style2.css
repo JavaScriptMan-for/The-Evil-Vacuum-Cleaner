@@ -113,6 +113,8 @@ p {
     width: 50px;
     padding: 15px;
     margin-left: -15px;
+    position: absolute;
+    margin-top: -20px;
 }
 @media screen and (max-width: 1024px) {
     canvas {
