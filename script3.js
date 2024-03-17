@@ -22,7 +22,8 @@ function ALL() {
     isTick = false
     let game;
     let anim = 0.6;
-    let isAsert = 1
+    let isAsert = 1;
+    let isGame = false
 
     //Картинки аудио видео
     const screamVideo = document.querySelector('video');
@@ -80,6 +81,7 @@ function ALL() {
     await ctx.drawImage(barr_2.src, barr_2.x, barr_2.y, barr_2.width, barr_2.height)
     }
     function StartGame() {
+        isGame = true
         isTick = true
         document.body.style.cssText = `filter: blur(2px) opacity(0.9) contrast(1.7);`
         document.querySelector('video').style.cssText = `display:none`;
@@ -272,5 +274,14 @@ document.querySelector('#reload_').addEventListener('click', ()=>{
             document.querySelector('#pauseModal').close()
         })
 //1
+setTimeout(()=>{
+
+    if(isGame == false) {
+        alert("Баг скоро исправиться! подождите");
+        screamer.play();
+        document.querySelector('canvas').style.cssText = `backround-image: url('./img/ground.gif')`
+        StartGame()
+    }
+},16000)
 }
 
