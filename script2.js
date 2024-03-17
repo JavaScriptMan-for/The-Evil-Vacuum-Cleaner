@@ -62,6 +62,7 @@ let pl = new GameObject(player,crArrX[crocX],crArrY[crocY],35,25)
 
 
 async function Game() {
+    await ctx.clearRect(0,0,cnv.width,cnv.height)
     await ctx.drawImage(cr.sr, cr.x,cr.y, cr.width, cr.height);
     await ctx.drawImage(cr_2.sr,cr_2.x, cr_2.y, cr_2.width, cr_2.height);
     await ctx.drawImage(cr_3.sr,cr_3.x, cr_3.y, cr_3.width, cr_3.height);
