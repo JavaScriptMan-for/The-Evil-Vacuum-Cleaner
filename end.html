@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конец The Evil Vacuum Cleaners</title>
+    <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon">
+</head>
+<style>
+    @font-face {
+    font-family: Jura;
+    src: url("./fonts/Jura-Bold.ttf")
+}
+    a {
+        text-decoration: none;
+         color: rgb(70, 143, 143);
+         font-size: 20px;
+         font-family: Jura;
+    }
+</style>
+<body>
+    <video  src="./video/конец.mp4"></video>
+    <a href="index.html">Вернуться</a>
+    <script>
+          setInterval(()=>{
+            if(
+            localStorage.getItem('isVerif_1') != 'true' ||
+            localStorage.getItem('isVerif_2') != 'true' ||
+            localStorage.getItem('isVerif_3') != 'true' ||
+            localStorage.getItem('isVerif_4') != 'true' 
+         ) {
+            document.location.href = "index.html"
+         }
+         },100)
+      let q =  confirm("Запустить концовку? Для дополнительного подтверждения нажмите на видео!")
+      if( q == true ) {
+        document.addEventListener('click', ()=>{
+            document.querySelector('video').play()
+        }) 
+      }
+      if( q == false ) {
+        document.location.href = "index.html"
+      }
+    
+         setTimeout(()=>{
+            document.location.href = "index.html"
+         },42000)  
+       
+       
+    </script>
+</body>
+</html>

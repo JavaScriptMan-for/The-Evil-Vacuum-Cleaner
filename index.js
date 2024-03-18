@@ -1,6 +1,6 @@
 
    let level = 1;
-
+   let isOpen = false
 
 
 
@@ -10,7 +10,7 @@
       }
    }
    function UpB() {
-      if(level < 4) {
+      if(level < 5) {
          level += 1
       }
    }
@@ -30,6 +30,14 @@
       if(level == 4) {
          document.location.href = "level_4.html"
       }
+      if(level == 5) {
+         if(isOpen) {
+            document.location.href = "end.html"
+         } else {
+            alert('Пройдите все уровни!')
+         }
+         
+      }
    })
    setInterval(()=>{
       if(level == 1) {
@@ -48,7 +56,12 @@
          document.querySelector('#l').innerHTML = "Четвёртый уровень";
          document.querySelector('#levelPrew').src = "./img/uncown.jpg"
       }
-   
+      if(level == 5) {
+         document.querySelector('#l').innerHTML = "Конец";
+         if(!isOpen) {
+            document.querySelector('#levelPrew').src = "./img/Конец_закрыто.png"
+         }  
+      }
    },100)
 
 
@@ -97,3 +110,16 @@
        yDown = null;
    };
 
+   setInterval(()=>{
+      if(
+         localStorage.getItem('isVerif_1') == 'true' &&
+         localStorage.getItem('isVerif_2') == 'true' &&
+         localStorage.getItem('isVerif_3') == 'true' &&
+         localStorage.getItem('isVerif') == 'true'
+      ) {
+         isOpen = true;
+         if(level == 5 && isOpen) {
+            document.querySelector('#levelPrew').src = "./img/Конец_открыто.png"
+         }
+      }
+   },1)

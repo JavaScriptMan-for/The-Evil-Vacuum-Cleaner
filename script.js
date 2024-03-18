@@ -191,7 +191,8 @@ async function Dead() {
             tick.pause();
             document.querySelector('.info').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds}`
             clearInterval(timeEnd)
-            localStorage.setItem('minets', minets)
+            localStorage.setItem('minets', minets);
+            localStorage.setItem('isVerif_1', 'true')
             console.log("Победа!");
             document.querySelector("#winModal").showModal()
         }

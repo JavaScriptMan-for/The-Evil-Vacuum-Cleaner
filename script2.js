@@ -304,7 +304,7 @@ setInterval(()=>{
     clearInterval(d)
 },timeAgr)
 function Win() {
-    localStorage.setItem('winned', true)
+    localStorage.setItem('isVerif_2', 'true')
     Dead = ()=>{}
     clearInterval(game);
     delete Game;

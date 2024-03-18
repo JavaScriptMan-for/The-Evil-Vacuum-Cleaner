@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Evil Vacuum Cleaner</title>
+    <link rel="stylesheet" href="style4.css">
+    <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon">
 </head>
 <body>
-    NOT A LEVEL
+    <br>
+    <div class="cnvc">
+        <canvas id="cnvs"></canvas>
+        <p id="time">00:00</p> <br>
+        <img id="pause" src="./img/pause.png" alt="PAUSE">
+    </div>
+    <a href="index.html">Выйти</a>
+    <div class="dialogs">
+        <dialog id="deadModal">
+            <h1>Вы проиграли!</h1>
+            <div class="buttons">
+                <button id="reload">Начать заново</button>
+                <button id="toMainMenu">В главное меню</button>
+            </div>
+        </dialog>
+        <dialog id="winModal">
+            <h1>Вы победили!</h1>
+            <div class="buttons">
+                <button id="reload_">Начать заново</button>
+                <button id="toMainMenu_">В главное меню</button>
+            </div>
+        </dialog>
+        <dialog id="pauseModal">
+            <h1>Вы находитесь в меню паузы!</h1>
+            <div class="buttons">
+                <button id="reload__">Начать заново</button>
+                <button id="toMainMenu__">В главное меню</button>
+                <button id="closeModal">Закрыть</button>
+            </div>
+          </dialog>
+    </div>
+    <script src="script4.js"></script>
 </body>
 </html>
