@@ -208,6 +208,7 @@ function Dead() {
 }
 
 function Win () {
+    localStorage.setItem('isVerif_3', 'true')
     Dead = ()=>{};
     music.volume = 0;
     scream.volume = 0;
@@ -274,14 +275,10 @@ document.querySelector('#reload_').addEventListener('click', ()=>{
             document.querySelector('#pauseModal').close()
         })
 //1
-setTimeout(()=>{
-
-    if(isGame == false) {
-        alert("Баг скоро исправиться! подождите");
-        screamer.play();
-        document.querySelector('canvas').style.cssText = `backround-image: url('./img/ground.gif')`
-        StartGame()
     }
-},16000)
-}
 
+if(navigator.userAgent.indexOf('safari')) {
+    document.querySelector('video').style.cssText = `display: flex`
+    document.querySelector('canvas').style.display = "flex";
+    StartGame()
+}
