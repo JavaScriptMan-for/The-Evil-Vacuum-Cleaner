@@ -184,6 +184,11 @@ function onKey(e) {
     if(e.keyCode == 68) {
         pl.x += 45
     }
+    if(e.keyCode === 72) {
+        alert(
+      "Третьий уровень - клавишами WSAD или свайпами управлять персонажем!"
+             )
+          }
 }
 
     document.addEventListener('keydown', onKey)
@@ -274,7 +279,6 @@ document.querySelector('#reload_').addEventListener('click', ()=>{
         document.querySelector('#closeModal').addEventListener('click',()=>{
             document.querySelector('#pauseModal').close()
         })
-//1
     }
 
 if(navigator.userAgent.indexOf('safari')) {

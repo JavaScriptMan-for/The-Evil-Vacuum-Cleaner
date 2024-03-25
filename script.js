@@ -68,7 +68,6 @@ let pl = new GameObject(500, 500, 100,100);
 
 //Функция игры
 async function Game() {
-    document.querySelector('.info').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds}`
     ctx.fillStyle = "blue";
     ctx.font = "20px Jura blue inline";
    await ctx.fillText("Пылесосущая долина - уровень 1", 10,15);
@@ -148,6 +147,11 @@ function keyOn(e) {
     if(e.keyCode == 27) {
         document.querySelector('#pauseModal').showModal()
     }
+ if(e.keyCode === 72) {
+  alert(
+"Первый уровень - нужно на клавиши WSAD стрелочки или свайпы управлять персонажем!"
+       )
+   }
 }
 document.addEventListener('keydown', keyOn);
 
@@ -189,7 +193,6 @@ async function Dead() {
             clearInterval(_three_)
             clearInterval(game)
             tick.pause();
-            document.querySelector('.info').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds}`
             clearInterval(timeEnd)
             localStorage.setItem('minets', minets);
             localStorage.setItem('isVerif_1', 'true')

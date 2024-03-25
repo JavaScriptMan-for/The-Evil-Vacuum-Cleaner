@@ -80,6 +80,7 @@ button {
     color: rgb(58, 56, 56);
     font-family: Jura, sans-serif;
     transition: 200ms;
+    outline: none;
 }
 button:hover {
     transform: scale(1.03);

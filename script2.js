@@ -116,6 +116,11 @@ function onKey(e) {
     if(e.keyCode == 87) {
         crArrY[crocY-=1]
     }
+    if(e.keyCode === 72) {
+        alert(
+      "Второй уровень - клавишами WSAD или свайпами управлять персонажем!"
+             )
+          }
     if(crocX >= 2 && e.keyCode == 68) {
         Dead();
     }
