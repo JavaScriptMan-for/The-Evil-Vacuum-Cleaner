@@ -251,6 +251,7 @@ function Win() {
 
 
     setTimeout(()=> {
+        localStorage.setItem('isVerif_4', true);
         document.querySelector('#winModal').showModal();
         clearInterval(loveOn);
     },4000)
