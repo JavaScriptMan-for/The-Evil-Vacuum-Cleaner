@@ -190,14 +190,14 @@ document.querySelector('#toMainMenu').addEventListener('click', ()=>{
     document.location.href = "index.html"
 })
 document.querySelector('#reload_').addEventListener('click', ()=>{
-    document.querySelector("#modal").close()
+    document.querySelector("#winModal").close()
     setTimeout(()=>{
      document.location.reload()
     },500)
     })
  
     document.querySelector('#toMainMenu_').addEventListener('click', ()=>{
-     document.querySelector("#modal").close()
+     document.querySelector("#winModal").close()
       document.location.href = "index.html"
      })
      document.querySelector('#pause').addEventListener('click', ()=>{

@@ -93,7 +93,7 @@ let crow = new GameObject(corova, randCords, Y,60,36);
 let __pult__ = new GameObject(pult, pl.x, pl.y, 32,22);
 let c = new GameObject(car, pl.x,160, 40,60);
 async function Game() {
-    document.querySelector('#time').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds} / 01:20  |  ${crushed} / 25`
+    document.querySelector('#time').innerHTML = `${ziroMin}${minets}:${ziroSec}${seconds} / 01:30  |  ${crushed} / 25`
         await ctx.clearRect(0,0,cnv.width,cnv.height);
         await ctx.drawImage(backround,0,0,cnv.width,cnv.height);
         await ctx.drawImage(pl.src, plThreeCords[place], pl.y, pl.width, pl.height);
@@ -188,6 +188,7 @@ function Crush() {
     },2800) 
 }
 document.addEventListener('click', ()=>{
+    isScream = true
     isTick = true;
     isTick == true ?   tick.play() : 0;
     isTick == true ? fermer.play() : 0;
@@ -222,7 +223,7 @@ function corowDespawn () {
         randCords = threeCords[place_Crow];
         crow.x = randCords
      isCrush = true
-      },1500)
+      },1200)
 }
 
 const findDead = window.setInterval(()=>{
@@ -269,7 +270,7 @@ function Dead() {
     mu.volume = 0;
     setTimeout(()=>{
         scream.volume = 0;
-    },1200)
+    },1700)
   
     crush.volume = 0;
     brim.volume = 0;
@@ -280,7 +281,7 @@ function Dead() {
 }
 
 const findWin = setInterval(()=>{
-    if(seconds >= 20 && minets == 1) {
+    if(seconds >= 30 && minets >= 1) {
        if(crushed >= 25) {
        Win();
        } else {

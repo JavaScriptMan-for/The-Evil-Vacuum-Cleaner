@@ -182,3 +182,19 @@ a {
         width: 100px;
     }
 }
+@media screen and (max-width: 208px) {
+    canvas {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 0px;
+    }
+    #time {
+        position: absolute;
+        margin-bottom: 20px;
+        font-size: 10px;
+    }
+    button {
+        width: 50px;
+        font-size: 7px;
+    }
+}
